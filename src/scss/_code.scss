@@ -1,0 +1,32 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.prose{
+    pre{
+        max-width: 100%;
+        background: $background-color;
+        color: $text-color;
+        font-family: monospace;
+        padding: 1em;
+        overflow: auto;
+        font-size: $font-size - 0.1rem;
+        line-height: 1.5;
+        @include border-radius(0.5em);
+        scrollbar-width: thin;
+
+        code{
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+    }
+
+    code{
+        background: $background-color;
+        color: $primary-color;
+        font-family: monospace;
+        padding: 0.2em 0.4em;
+        @include border-radius(0.15em);
+        font-size: $font-size - 0.1rem;
+    }
+}

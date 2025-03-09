@@ -1,0 +1,264 @@
+@charset "UTF-8";
+.prose {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.5;
+  font-family: var(--prose-font);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--prose-text-color);
+}
+.prose p, .prose blockquote, .prose table, .prose video, .prose audio, .prose img {
+  margin: 0px 0px 1em 0px;
+  padding: 0px;
+}
+.prose::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  margin: 0px 0px 0.75em 0px;
+  padding: 0px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.prose h1 {
+  font-size: 2rem;
+}
+.prose h2 {
+  font-size: 1.75rem;
+}
+.prose h3 {
+  font-size: 1.5rem;
+}
+.prose h4 {
+  font-size: 1.25rem;
+}
+.prose h5 {
+  font-size: 1.125rem;
+}
+.prose h6 {
+  font-size: 1rem;
+}
+.prose a {
+  color: var(--prose-primary-color);
+  text-decoration: none;
+}
+.prose a:hover, .prose a:focus, .prose a:active {
+  color: var(--prose-primary-color);
+  text-decoration: underline;
+}
+.prose h1 a, .prose h2 a, .prose h3 a, .prose h4 a, .prose h5 a, .prose h6 a {
+  color: var(--prose-text-color);
+}
+.prose h1 a:hover, .prose h1 a:focus, .prose h1 a:active, .prose h2 a:hover, .prose h2 a:focus, .prose h2 a:active, .prose h3 a:hover, .prose h3 a:focus, .prose h3 a:active, .prose h4 a:hover, .prose h4 a:focus, .prose h4 a:active, .prose h5 a:hover, .prose h5 a:focus, .prose h5 a:active, .prose h6 a:hover, .prose h6 a:focus, .prose h6 a:active {
+  color: var(--prose-text-color);
+}
+.prose p {
+  font-size: 1rem;
+}
+.prose strong {
+  font-weight: 700;
+}
+.prose em, .prose i {
+  font-style: italic;
+}
+.prose u {
+  text-decoration: underline;
+}
+.prose blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--prose-text-color);
+  background: var(--prose-background-color);
+  border-left: 5px solid var(--prose-primary-color);
+  padding: 1em 1em 1em 2.5em;
+  position: relative;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.prose blockquote::before {
+  display: block;
+  content: "“";
+  width: 0.75em;
+  height: 0.75em;
+  line-height: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--prose-primary-color);
+  position: absolute;
+  top: 0.5em;
+  left: 0.25em;
+}
+.prose blockquote cite {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: right;
+}
+.prose blockquote cite::before {
+  content: "— ";
+}
+.prose hr {
+  height: 1px;
+  border: none;
+  background: var(--prose-border-color);
+  margin: 1.5em 0;
+}
+
+.prose ul, .prose ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  counter-reset: list-counter;
+}
+.prose ul > li, .prose ol > li {
+  margin-bottom: 0.4em;
+}
+.prose ul > li:last-child, .prose ol > li:last-child {
+  margin-bottom: 0;
+}
+.prose > ul, .prose > ol {
+  margin-bottom: 1em;
+}
+.prose ul > li {
+  position: relative;
+  padding-left: 0.9em;
+}
+.prose ul > li::before {
+  display: block;
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--prose-primary-color);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: 0px;
+  top: 0.45em;
+}
+.prose ul ul > li::before {
+  width: 0.3em;
+  height: 0.3em;
+  background: transparent;
+  border: solid 2px var(--prose-primary-color);
+}
+.prose ul ul ul > li::before {
+  border: solid 2px var(--prose-secondary-color);
+}
+.prose ol > li {
+  counter-increment: list-counter;
+}
+.prose ol > li::before {
+  display: inline-block;
+  content: counter(list-counter);
+  min-width: 1em;
+  padding: 0.15em;
+  margin-right: 0.25em;
+  line-height: 1;
+  text-align: center;
+  background: var(--prose-primary-color);
+  -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  border-radius: 0.15em;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.prose ol ol > li::before {
+  content: counter(list-counter, upper-alpha);
+  background: transparent;
+  border: solid 1px var(--prose-primary-color);
+  color: var(--prose-primary-color);
+}
+.prose ol ol ol > li::before {
+  content: counter(list-counter, lower-alpha);
+  border: solid 1px var(--prose-secondary-color);
+  color: var(--prose-secondary-color);
+}
+.prose ul ul, .prose ul ol, .prose ol ol, .prose ol ul {
+  margin-top: 0.4em;
+  padding-left: 1em;
+}
+
+.prose table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 1rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.prose table th, .prose table td {
+  border-spacing: 0px;
+  border: 1px solid var(--prose-border-color);
+  padding: 0.75em;
+  text-align: left;
+}
+.prose table th {
+  background: var(--prose-title-background-color);
+  color: var(--prose-title-text-color);
+  font-weight: 700;
+}
+.prose table tr:nth-child(even) {
+  background: var(--prose-background-color);
+}
+
+.prose pre {
+  max-width: 100%;
+  background: var(--prose-background-color);
+  color: var(--prose-text-color);
+  font-family: monospace;
+  padding: 1em;
+  overflow: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  scrollbar-width: thin;
+}
+.prose pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+.prose code {
+  background: var(--prose-background-color);
+  color: var(--prose-primary-color);
+  font-family: monospace;
+  padding: 0.2em 0.4em;
+  -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  border-radius: 0.15em;
+  font-size: 0.9rem;
+}
+
+.prose video, .prose audio, .prose img {
+  display: block;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+.prose video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+.prose audio {
+  width: 100%;
+  max-width: 100%;
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+}

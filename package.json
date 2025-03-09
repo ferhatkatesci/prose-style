@@ -1,0 +1,14 @@
+{
+  "name": "prose-style",
+  "version": "1.0.0",
+  "description": "Lightweight CSS library for prose with SCSS.",
+  "main": "assets/css/prose.css",
+  "scripts": {
+    "build:css": "sass src/scss/prose.scss dist/css/prose.css --style=expanded --no-source-map && sass src/scss/prose.scss dist/css/prose.min.css --style=compressed --no-source-map"
+  },
+  "author": "Ferhat Kateşçi",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
+}

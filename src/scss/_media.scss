@@ -1,0 +1,26 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.prose {
+    video, audio, img{
+        display: block;
+        @include border-radius(0.5em);
+    }
+
+    video{        
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        background: #000;
+    }
+
+    audio{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}

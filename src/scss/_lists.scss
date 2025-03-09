@@ -1,0 +1,109 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.prose {
+    ul, ol{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: $font-size;
+        line-height: 1.5;
+        counter-reset: list-counter;
+
+        & > li{
+            margin-bottom: 0.4em;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    & > ul, & > ol{
+        margin-bottom: 1em
+    }
+
+    ul{
+        & > li{
+            position: relative;
+            padding-left: 0.9em;
+
+            &::before{
+                display: block;
+                content: "";
+                width: 0.5em;
+                height: 0.5em;
+                background: $primary-color;
+                @include border-radius(50%);
+                position: absolute;
+                left: 0px;
+                top: 0.45em;
+            }
+        }
+
+        ul{
+            & > li{
+                &::before{
+                    width: 0.3em;
+                    height: 0.3em;
+                    background: transparent;
+                    border:solid 2px $primary-color;
+                }
+            }
+
+            ul{
+                & > li{
+                    &::before{
+                        border:solid 2px $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    ol{
+        & > li{
+            counter-increment: list-counter;
+
+            &::before{
+                display: inline-block;
+                content: counter(list-counter);
+                min-width: 1em;
+                padding: 0.15em;
+                margin-right: 0.25em;
+                line-height: 1;
+                text-align: center;
+                background: $primary-color;
+                @include border-radius(0.15em);
+                color: #fff;
+                font-size: $font-size - 0.1rem;
+            }
+        }
+
+        ol{
+            & > li{
+                &::before{
+                    content: counter(list-counter, upper-alpha);
+                    background: transparent;
+                    border:solid 1px $primary-color;
+                    color: $primary-color;
+                }
+            }
+
+            ol{
+                & > li{
+                    &::before{
+                        content: counter(list-counter, lower-alpha);
+                        border:solid 1px $secondary-color;
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    ul ul, ul ol, ol ol, ol ul{
+        margin-top: 0.4em;
+        padding-left: 1em;
+    }
+}
