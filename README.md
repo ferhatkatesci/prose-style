@@ -10,7 +10,7 @@ A lightweight and responsive CSS stylesheet for better prose styling. Developed 
 <link rel="stylesheet" href="prose.min.css">
 ```
 
-## Wrap your content with the "prose" class:
+### Wrap your content with the "prose" class:
 
 ```html
 <div class="prose">
